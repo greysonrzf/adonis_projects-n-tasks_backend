@@ -27,7 +27,7 @@ class ForgotPasswordController {
         message => {
           message
             .to(user.email)
-            .from('noreply@prismapro.com.br', 'PrismaPro')
+            .from('noreply@projectmanager.com.br', 'Project Manager')
             .subject('Recuperação de Senha')
         })
     } catch (err) {
