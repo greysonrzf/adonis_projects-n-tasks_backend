@@ -15,7 +15,11 @@ Route.group(() => {
   Route.post('files', 'FileController.store')
 
   /** Create all apiOnly routes for controller using resource */
-  Route.resource('projects', 'ProjectController').apiOnly()
-  Route.resource('projects.tasks', 'TaskController').apiOnly()
+  Route.resource('projects', 'ProjectController')
+    .apiOnly()
+    .validator(new Map([[['projects.store'], ['Project']]]))
+  Route.resource('projects.tasks', 'TaskController')
+    .apiOnly()
+    .validator(new Map([[['projects.tasks.store'], ['Task']]]))
 }).middleware(['auth'])
 
