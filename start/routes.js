@@ -16,5 +16,6 @@ Route.group(() => {
 
   /** Create all apiOnly routes for controller using resource */
   Route.resource('projects', 'ProjectController').apiOnly()
+  Route.resource('projects.tasks', 'TaskController').apiOnly()
 }).middleware(['auth'])
 
